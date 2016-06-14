@@ -192,7 +192,7 @@ public class MapParser {
 	 *             when the source could not be read.
 	 */
 	public Level parseMap(InputStream source) throws IOException {
-		String[] board = new String[] {
+		/*String[] board = new String[] {
 				"#######################",
 				"#..........#..........#",
 				"#.###.####.#.####.###.#",
@@ -217,15 +217,15 @@ public class MapParser {
 		};
 
 		List<String> lines = Arrays.asList(board);
-		//return parseMap(lines);
+		return parseMap(lines);*/
 
 		try (BufferedReader reader = new BufferedReader(new InputStreamReader(
 				source))) {
-			List<String> lines2 = new ArrayList<>();
+			List<String> lines = new ArrayList<>();
 			while (reader.ready()) {
-				lines2.add(reader.readLine());
+				lines.add(reader.readLine());
 			}
-			return parseMap(lines2);
+			return parseMap(lines);
 		}
 
 	}
