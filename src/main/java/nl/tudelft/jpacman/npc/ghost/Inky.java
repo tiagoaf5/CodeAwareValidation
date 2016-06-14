@@ -1,13 +1,9 @@
 package nl.tudelft.jpacman.npc.ghost;
 
-import java.util.List;
-import java.util.Map;
-
 import nl.tudelft.jpacman.board.Direction;
-import nl.tudelft.jpacman.board.Square;
-import nl.tudelft.jpacman.board.Unit;
-import nl.tudelft.jpacman.level.Player;
 import nl.tudelft.jpacman.sprite.Sprite;
+
+import java.util.Map;
 
 /**
  * <p>
@@ -91,43 +87,10 @@ public class Inky extends Ghost {
 	 * destination.
 	 * </p>
 	 */
-	// CHECKSTYLE:OFF To keep this more readable.
 	@Override
 	public Direction nextMove() {
-		Unit blinky = Navigation.findNearest(Blinky.class, getSquare());
-		if (blinky == null) {
-			return randomMove();
-		}
 
-		Unit player = Navigation.findNearest(Player.class, getSquare());
-		if (player == null) {
-			return randomMove();
-		}
-
-		Direction targetDirection = player.getDirection();
-		Square playerDestination = player.getSquare();
-		for (int i = 0; i < SQUARES_AHEAD; i++) {
-			playerDestination = playerDestination.getSquareAt(targetDirection);
-		}
-
-		Square destination = playerDestination;
-		List<Direction> firstHalf = Navigation.shortestPath(blinky.getSquare(),
-				playerDestination, null);
-		if (firstHalf == null) {
-			return randomMove();
-		}
-
-		for (Direction d : firstHalf) {
-			destination = playerDestination.getSquareAt(d);
-		}
-
-		List<Direction> path = Navigation.shortestPath(getSquare(),
-				destination, this);
-		if (path != null && !path.isEmpty()) {
-			return path.get(0);
-		}
 		return randomMove();
 	}
-	// CHECKSTYLE:ON
 
 }

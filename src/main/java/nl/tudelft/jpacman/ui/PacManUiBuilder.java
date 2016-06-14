@@ -1,11 +1,11 @@
 package nl.tudelft.jpacman.ui;
 
+import nl.tudelft.jpacman.game.Game;
+import nl.tudelft.jpacman.ui.ScorePanel.ScoreFormatter;
+
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-
-import nl.tudelft.jpacman.game.Game;
-import nl.tudelft.jpacman.ui.ScorePanel.ScoreFormatter;
 
 /**
  * Builder for the JPac-Man UI.
@@ -65,28 +65,10 @@ public class PacManUiBuilder {
 
 		if (defaultButtons) {
 			addStartButton(game);
-			addStopButton(game);
 		}
 		return new PacManUI(game, buttons, keyMappings, scoreFormatter);
 	}
 
-	/**
-	 * Adds a button with the caption {@value #STOP_CAPTION} that stops the
-	 * game.
-	 * 
-	 * @param game
-	 *            The game to stop.
-	 */
-	private void addStopButton(final Game game) {
-		assert game != null;
-
-		buttons.put(STOP_CAPTION, new Action() {
-			@Override
-			public void doAction() {
-				game.stop();
-			}
-		});
-	}
 
 	/**
 	 * Adds a button with the caption {@value #START_CAPTION} that starts the
@@ -150,7 +132,6 @@ public class PacManUiBuilder {
 	public PacManUiBuilder withDefaultButtons() {
 		defaultButtons = true;
 		buttons.put(START_CAPTION, null);
-		buttons.put(STOP_CAPTION, null);
 		return this;
 	}
 	
