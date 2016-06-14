@@ -1,0 +1,24 @@
+{
+  "probe": {
+    "probeTypeName": "CodeChanges"
+  },
+  "actuators": [
+    {
+      "type": "Email notification",
+      "emails": [
+        "tiagoaf@gmail.com"
+      ]
+    }
+  ],
+  "host": {
+    "type": "class",
+    "implementsList": "",
+    "extendsList": "",
+    "path": "/src/main/java/nl/tudelft/jpacman/level/MapParser.java",
+    "name": "MapParser",
+    "modifiers": "public",
+    "qualifiedName": "nl.tudelft.jpacman.level.MapParser"
+  },
+  "label": "MapParser",
+  "creationTime": "1465907302937"
+}
