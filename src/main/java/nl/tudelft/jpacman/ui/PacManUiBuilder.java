@@ -15,11 +15,6 @@ import java.util.Map;
 public class PacManUiBuilder {
 
 	/**
-	 * Caption for the default stop button.
-	 */
-	private static final String STOP_CAPTION = "Stop";
-
-	/**
 	 * Caption for the default start button.
 	 */
 	private static final String START_CAPTION = "Start";
