@@ -1,0 +1,36 @@
+{
+  "probe": {
+    "probeTypeName": "StaticAnalysis",
+    "reportingLevel": 1,
+    "desiredCategories": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "actuators": [
+    {
+      "type": "Email notification",
+      "emails": [
+        "tiagoaf@gmail.com"
+      ]
+    }
+  ],
+  "host": {
+    "type": "method",
+    "returnType": "nl.tudelft.jpacman.level.Level",
+    "parameterList": "(InputStream source)",
+    "path": "/src/main/java/nl/tudelft/jpacman/level/MapParser.java",
+    "name": "parseMap",
+    "modifiers": "public",
+    "qualifiedName": "nl.tudelft.jpacman.level.MapParser"
+  },
+  "label": "parseMap",
+  "creationTime": "1465899566047"
+}
