@@ -33,24 +33,12 @@ public class DefaultPlayerInteractionMap implements CollisionMap {
 	private static CollisionInteractionMap defaultCollisions() {
 		CollisionInteractionMap collisionMap = new CollisionInteractionMap();
 
-		collisionMap.onCollision(Player.class, Ghost.class,
-				new CollisionHandler<Player, Ghost>() {
+		collisionMap.onCollision(Player.class, Ghost.class,(player,ghost)->player.setAlive(false));
 
-					@Override
-					public void handleCollision(Player player, Ghost ghost) {
-						player.setAlive(false);
-					}
-				});
-
-		collisionMap.onCollision(Player.class, Pellet.class,
-				new CollisionHandler<Player, Pellet>() {
-
-					@Override
-					public void handleCollision(Player player, Pellet pellet) {
-						pellet.leaveSquare();
-						player.addPoints(pellet.getValue());
-					}
-				});
+		collisionMap.onCollision(Player.class, Pellet.class, (player,pellet)->{
+			pellet.leaveSquare();
+			player.addPoints(pellet.getValue());
+		});
 		return collisionMap;
 	}
 }
