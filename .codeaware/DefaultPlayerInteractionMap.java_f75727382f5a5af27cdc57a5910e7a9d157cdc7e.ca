@@ -1,0 +1,24 @@
+{
+  "probe": {
+    "probeTypeName": "CodeChanges"
+  },
+  "actuators": [
+    {
+      "type": "Email notification",
+      "emails": [
+        "hugomattos15@gmail.com"
+      ]
+    }
+  ],
+  "host": {
+    "type": "class",
+    "implementsList": "implements CollisionMap",
+    "extendsList": "",
+    "path": "/src/main/java/nl/tudelft/jpacman/level/DefaultPlayerInteractionMap.java",
+    "name": "DefaultPlayerInteractionMap",
+    "modifiers": "public",
+    "qualifiedName": "nl.tudelft.jpacman.level.DefaultPlayerInteractionMap"
+  },
+  "label": "InteractionMapDiff",
+  "creationTime": "1466089462581"
+}
