@@ -1,0 +1,36 @@
+{
+  "probe": {
+    "probeTypeName": "StaticAnalysis",
+    "reportingLevel": 1,
+    "desiredCategories": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "actuators": [
+    {
+      "type": "Email notification",
+      "emails": [
+        "joaonadais@gmail.com"
+      ]
+    }
+  ],
+  "host": {
+    "type": "class",
+    "implementsList": "",
+    "extendsList": "",
+    "path": "/src/main/java/nl/tudelft/jpacman/ui/PacManUiBuilder.java",
+    "name": "PacManUiBuilder",
+    "modifiers": "public",
+    "qualifiedName": "nl.tudelft.jpacman.ui.PacManUiBuilder"
+  },
+  "label": "PacManBugs",
+  "creationTime": "1466088317802"
+}

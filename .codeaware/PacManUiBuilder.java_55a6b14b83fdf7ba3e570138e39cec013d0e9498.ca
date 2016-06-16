@@ -1,0 +1,24 @@
+{
+  "probe": {
+    "probeTypeName": "CodeChanges"
+  },
+  "actuators": [
+    {
+      "type": "Email notification",
+      "emails": [
+        "joaonadais@gmail.com"
+      ]
+    }
+  ],
+  "host": {
+    "type": "class",
+    "implementsList": "",
+    "extendsList": "",
+    "path": "/src/main/java/nl/tudelft/jpacman/ui/PacManUiBuilder.java",
+    "name": "PacManUiBuilder",
+    "modifiers": "public",
+    "qualifiedName": "nl.tudelft.jpacman.ui.PacManUiBuilder"
+  },
+  "label": "PacManDiff",
+  "creationTime": "1466088248039"
+}
