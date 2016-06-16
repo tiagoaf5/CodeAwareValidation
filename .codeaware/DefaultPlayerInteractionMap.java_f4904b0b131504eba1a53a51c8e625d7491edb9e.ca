@@ -5,7 +5,9 @@
   "actuators": [
     {
       "type": "Email notification",
-      "emails": []
+      "emails": [
+        "hi@andreduarte.io"
+      ]
     }
   ],
   "host": {
