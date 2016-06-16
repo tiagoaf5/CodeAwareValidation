@@ -219,7 +219,7 @@ public class MapParser {
 
 		List<String> lines = Arrays.asList(board);
 		*/
-		try(BufferedReader reader = new BufferedReader(new InputStreamReader(source))){
+		try(BufferedReader reader = new BufferedReader(new InputStreamReader(source, "UTF-8"))){
 			List<String> lines = new ArrayList<>();
 			while(reader.ready()){
 				lines.add(reader.readLine());
