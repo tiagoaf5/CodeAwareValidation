@@ -18,19 +18,19 @@
     {
       "type": "Email notification",
       "emails": [
-        "ei11083@fe.up.pt"
+        "hugomattos15@gmail.com"
       ]
     }
   ],
   "host": {
-    "type": "class",
-    "implementsList": "",
-    "extendsList": "",
-    "path": "/src/main/java/nl/tudelft/jpacman/ui/PacManUiBuilder.java",
-    "name": "PacManUiBuilder",
+    "type": "method",
+    "returnType": "Level",
+    "parameterList": "(InputStream source)",
+    "path": "/src/main/java/nl/tudelft/jpacman/level/MapParser.java",
+    "name": "parseMap",
     "modifiers": "public",
-    "qualifiedName": "nl.tudelft.jpacman.ui.PacManUiBuilder"
+    "qualifiedName": "nl.tudelft.jpacman.level.MapParser"
   },
-  "label": "PacManBugs",
-  "creationTime": "1466088503315"
+  "label": "parseMapBugs",
+  "creationTime": "1466089551014"
 }

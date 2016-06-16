@@ -154,32 +154,10 @@ public class Launcher {
 			final Game game) {
 		final Player p1 = getSinglePlayer(game);
 
-		builder.addKey(KeyEvent.VK_UP, new Action() {
-
-			@Override
-			public void doAction() {
-				game.move(p1, Direction.NORTH);
-			}
-		}).addKey(KeyEvent.VK_DOWN, new Action() {
-
-			@Override
-			public void doAction() {
-				game.move(p1, Direction.SOUTH);
-			}
-		}).addKey(KeyEvent.VK_LEFT, new Action() {
-
-			@Override
-			public void doAction() {
-				game.move(p1, Direction.WEST);
-			}
-		}).addKey(KeyEvent.VK_RIGHT, new Action() {
-
-			@Override
-			public void doAction() {
-				game.move(p1, Direction.EAST);
-			}
-		});
-
+		builder.addKey(KeyEvent.VK_UP,() -> game.move(p1, Direction.NORTH))
+			  	.addKey(KeyEvent.VK_DOWN, () -> game.move(p1, Direction.SOUTH))
+				.addKey(KeyEvent.VK_LEFT, () -> game.move(p1, Direction.WEST))
+				.addKey(KeyEvent.VK_RIGHT, () -> game.move(p1, Direction.EAST));
 	}
 
 	private Player getSinglePlayer(final Game game) {
