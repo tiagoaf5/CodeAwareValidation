@@ -192,7 +192,7 @@ public class MapParser {
 	 *             when the source could not be read.
 	 */
 	public Level parseMap(InputStream source) throws IOException {
-		try (BufferedReader reader = new BufferedReader(new InputStreamReader(source)))
+		try (BufferedReader reader = new BufferedReader(new InputStreamReader(source, "UTF-8")))
 		{
 			List<String> lines = new ArrayList<>();
 			while(reader.ready())
