@@ -1,0 +1,32 @@
+{
+  "probe": {
+    "probeTypeName": "Metrics",
+    "values": [
+      3,
+      7,
+      20,
+      7,
+      50,
+      200
+    ]
+  },
+  "actuators": [
+    {
+      "type": "Email notification",
+      "emails": [
+        "joaopedropinheiro.lib@gmail.com"
+      ]
+    }
+  ],
+  "host": {
+    "type": "method",
+    "returnType": "nl.tudelft.jpacman.board.Direction",
+    "parameterList": "()",
+    "path": "/src/main/java/nl/tudelft/jpacman/npc/ghost/Inky.java",
+    "name": "nextMove",
+    "modifiers": "@Override\n\tpublic",
+    "qualifiedName": "nl.tudelft.jpacman.npc.ghost.Inky"
+  },
+  "label": "nextMoveMetrics",
+  "creationTime": "1466088544450"
+}
