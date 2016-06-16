@@ -14,6 +14,8 @@ import java.util.Map;
  */
 public class PacManUiBuilder {
 
+	public static String STOP_CAPTION = "Stop";
+
 	/**
 	 * Caption for the default start button.
 	 */
@@ -60,6 +62,7 @@ public class PacManUiBuilder {
 
 		if (defaultButtons) {
 			addStartButton(game);
+			addStopButton(game);
 		}
 		return new PacManUI(game, buttons, keyMappings, scoreFormatter);
 	}
@@ -127,6 +130,7 @@ public class PacManUiBuilder {
 	public PacManUiBuilder withDefaultButtons() {
 		defaultButtons = true;
 		buttons.put(START_CAPTION, null);
+		buttons.put(STOP_CAPTION,null);
 		return this;
 	}
 	
@@ -141,5 +145,16 @@ public class PacManUiBuilder {
 	public PacManUiBuilder withScoreFormatter(ScoreFormatter sf) {
 		scoreFormatter = sf;
 		return this;
+	}
+
+	private void addStopButton (final Game game ){
+		assert game != null;
+
+		buttons.put(STOP_CAPTION, new Action(){
+			@Override
+			public void doAction(){
+				game.stop();
+			}
+		});
 	}
 }
