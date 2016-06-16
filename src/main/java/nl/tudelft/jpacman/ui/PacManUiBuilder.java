@@ -20,6 +20,12 @@ public class PacManUiBuilder {
 	private static final String START_CAPTION = "Start";
 
 	/**
+	 * Caption for the default stop button.
+	 */
+	public static  String STOP_CAPTION = "Stop";
+
+
+	/**
 	 * Map of buttons and their actions.
 	 */
 	private final Map<String, Action> buttons;
@@ -60,6 +66,7 @@ public class PacManUiBuilder {
 
 		if (defaultButtons) {
 			addStartButton(game);
+			addStopButton(game);
 		}
 		return new PacManUI(game, buttons, keyMappings, scoreFormatter);
 	}
@@ -79,6 +86,17 @@ public class PacManUiBuilder {
 			@Override
 			public void doAction() {
 				game.start();
+			}
+		});
+	}
+
+	private void addStopButton(final Game game){
+		assert game != null;
+
+		buttons.put(STOP_CAPTION, new Action() {
+			@Override
+			public void doAction() {
+				game.stop();
 			}
 		});
 	}
@@ -127,6 +145,7 @@ public class PacManUiBuilder {
 	public PacManUiBuilder withDefaultButtons() {
 		defaultButtons = true;
 		buttons.put(START_CAPTION, null);
+		buttons.put(STOP_CAPTION,null);
 		return this;
 	}
 	
