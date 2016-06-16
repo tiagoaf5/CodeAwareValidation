@@ -93,34 +93,32 @@ public class Inky extends Ghost {
 	 */
 	@Override
 	public Direction nextMove() {
-		Unit blinky = Navigation.findNearest(Blinky.class, getSquare());
-		if(blinky==null){
+		Unit blinky = Navigation.findNearest(Blinky.class,getSquare());
+		if(blinky==null)
+		{
 			return randomMove();
 		}
-
-		Unit player = Navigation.findNearest(Player.class, getSquare());
-		if(player==null){
+		Unit player = Navigation.findNearest(Player.class,getSquare());
+		if(player==null)
 			return randomMove();
-		}
-
 		Direction targetDirection = player.getDirection();
 		Square playerDestination = player.getSquare();
-		for (int i = 0; i <SQUARES_AHEAD; i++){
-			playerDestination = playerDestination.getSquareAt(targetDirection);
+		for(int i = 0;i<SQUARES_AHEAD;i++)
+		{
+			playerDestination=playerDestination.getSquareAt(targetDirection);
 		}
-
 		Square destination = playerDestination;
-		List<Direction> firstHalf = Navigation.shortestPath(blinky.getSquare(), playerDestination, null);
-		if(firstHalf==null){
+		List<Direction> firstHalf=Navigation.shortestPath(blinky.getSquare(),playerDestination,null);
+		if(firstHalf==null) {
 			return randomMove();
 		}
-
-		for(Direction d : firstHalf){
+		for(Direction d : firstHalf)
+		{
 			destination = playerDestination.getSquareAt(d);
 		}
-
-		List<Direction> path = Navigation.shortestPath(getSquare(), destination, this);
-		if(path != null && !path.isEmpty()){
+		List<Direction> path = Navigation.shortestPath(getSquare(),destination,this);
+		if(path!= null && !path.isEmpty())
+		{
 			return path.get(0);
 		}
 		return randomMove();

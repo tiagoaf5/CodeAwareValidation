@@ -22,7 +22,7 @@ public class PacManUiBuilder {
 	/**
 	 * Caption for the default stop button.
 	 */
-	public static  String STOP_CAPTION = "Stop";
+	public static final String STOP_CAPTION = "Stop";
 
 
 	/**
